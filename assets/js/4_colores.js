@@ -1,8 +1,3 @@
-const azul = document.querySelector("#azul");
-const rojo = document.querySelector("#rojo");
-const verde = document.querySelector("#verde");
-const amarillo = document.querySelector("#amarillo");
-
 const pintar = (ref, color = "black") => {
   const div = document.querySelector(`#` + ref);
   div.style.backgroundColor = color;
