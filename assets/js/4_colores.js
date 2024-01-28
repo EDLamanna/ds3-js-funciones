@@ -19,14 +19,14 @@ amarillo.addEventListener("click", () => {
   pintar("amarillo", "black");
 });
 
-
-
 const agregarElemento = (id) => {
-  nuevoDiv = document.createElement("div");
-  nuevoDiv.id = id;
-  nuevoDiv.style.height = "200px";
-  nuevoDiv.style.width = "200px";
-  document.body.appendChild(nuevoDiv);
+  if (!document.getElementById(id)){
+    nuevoDiv = document.createElement("div");
+    nuevoDiv.id = id;
+    nuevoDiv.style.height = "200px";
+    nuevoDiv.style.width = "200px";
+    document.body.appendChild(nuevoDiv);
+  }
 };
 
 let Colores = "";
@@ -45,19 +45,20 @@ document.addEventListener("keydown", (event) => {
     colores = "skyBlue";
     divKey.style.backgroundColor = colores;
   }
-  if (event.key === "q" || event.key === "Q") {
+  if (event.key === "q" || event.key === "Q")
+   {
     agregarElemento("morado");
     colores = "purple";
     morado.style.backgroundColor = colores;
-  }
+    }
   if (event.key === "w" || event.key === "W") {
     agregarElemento("gris");
     colores = "grey";
     gris.style.backgroundColor = colores;
   }
-  if (event.key === "e" || event.key === "E") {
+  if (event.key === "e" || event.key === "E"){
     agregarElemento("cafe");
-    colores = "rgb(139,69,19    )";
+    colores = "rgb(139,69,19)";
     cafe.style.backgroundColor = colores;
   }
 });
